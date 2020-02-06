@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
-from main import views
+from main.views import views
+from main.views import auth
 
 
 urlpatterns = [
@@ -26,6 +27,11 @@ urlpatterns = [
     path('employeeList/', views.EmployeeList.as_view()),
     path('bossCreate/', views.BossCreate.as_view()),
     path('empCreate/', views.EmployeeCreate.as_view()),
-    path('skillCreateList/', views.SkillCreateList.as_view()),
+    path('softSkillCreateList/', views.SoftSkillCreateList.as_view()),
+    path('hardSkillCreateList/', views.HardSkillCreateList.as_view()),
     path('employee/<int:pk>/', views.EmployeeDetail.as_view()),
+    path('roles/', views.RoleList.as_view()),
+    path('signup/', auth.signup),
+    path('login/', auth.login),
+    path('logout/', auth.logout),
 ]

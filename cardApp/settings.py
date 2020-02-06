@@ -100,7 +100,7 @@ WSGI_APPLICATION = 'cardApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'appDB',
+        'NAME': 'veryNewDB',
         'USER': 'bestriess',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -146,5 +146,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
+
 
 django_heroku.settings(locals())
