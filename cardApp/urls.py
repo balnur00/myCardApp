@@ -18,6 +18,8 @@ from django.urls import path, include
 from django.conf.urls import url
 from main.views import views
 from main.views import auth
+from rest_framework_simplejwt import views as jwt_views
+from rest_framework_jwt.views import obtain_jwt_token
 
 
 urlpatterns = [
@@ -31,7 +33,13 @@ urlpatterns = [
     path('hardSkillCreateList/', views.HardSkillCreateList.as_view()),
     path('employee/<int:pk>/', views.EmployeeDetail.as_view()),
     path('roles/', views.RoleList.as_view()),
-    path('signup/', auth.signup),
-    path('login/', auth.login),
-    path('logout/', auth.logout),
+
+    # path('signup/', auth.signup),
+    # path('login/', auth.login),
+    # path('logout/', auth.logout),
+
+    # path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
+
+    path('login/', obtain_jwt_token)
 ]

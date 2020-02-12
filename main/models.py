@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth.models import UserManager
 
 
 class Boss(User):
@@ -7,11 +8,7 @@ class Boss(User):
     # name = models.CharField(max_length=200)
     # surname = models.CharField(max_length=200)
     # skinname = models.CharField(max_length=200)
-
-    objects = models.Manager()
-
-    def __str__(self):
-        return self.name
+    objects = UserManager()
 
     class Meta:
         verbose_name = 'Boss'
