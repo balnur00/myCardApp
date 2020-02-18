@@ -25,12 +25,15 @@ from rest_framework_jwt.views import obtain_jwt_token
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    # path('main/', include('main.urls')),
-    path('employeeList/', views.EmployeeList.as_view()),
+#boss
     path('bossCreate/', views.BossCreate.as_view()),
+#employee
+    path('employeeList/', views.EmployeeList.as_view()),
     path('empCreate/', views.EmployeeCreate.as_view()),
-    path('softSkillCreateList/', views.SoftSkillCreateList.as_view()),
-    path('hardSkillCreateList/', views.HardSkillCreateList.as_view()),
+#skill
+    path('softSkillUpdate/<int:pk>/', views.SkillUpdate.as_view()),
+    path('softSkillCreate', views.SkillUpdate.as_view()),
+    # path('hardSkillCreateList/', views.HardSkillCreateList.as_view()),
     path('employee/<int:pk>/', views.EmployeeDetail.as_view()),
     path('roles/', views.RoleList.as_view()),
 

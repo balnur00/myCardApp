@@ -68,6 +68,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'cardApp.urls'
+# AUTH_USER_MODEL = 'main.User' OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 
 TEMPLATES = [
     {
@@ -104,9 +105,9 @@ WSGI_APPLICATION = 'cardApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'newnewDB',
-        'USER': 'mycardappuser',
-        'PASSWORD': 'somepassword',
+        'NAME': 'app',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -196,7 +197,8 @@ JWT_AUTH = {
     'rest_framework_jwt.utils.jwt_get_user_id_from_payload_handler',
 
     'JWT_RESPONSE_PAYLOAD_HANDLER':
-    'rest_framework_jwt.utils.jwt_response_payload_handler',
+    'main.views.response_jwt.jwt_response_payload_handler',
+    # 'rest_framework_jwt.utils.jwt_response_payload_handler',
 
     'JWT_SECRET_KEY': SECRET_KEY,
     'JWT_GET_USER_SECRET_KEY': None,

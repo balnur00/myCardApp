@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bd70b3f-f3ab-4511-9a1b-44c8a15aadd5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/main/migrations/0002_remove_boss_skinname.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0003_auto_20200218_0849.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/views/response_jwt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cardApp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardApp/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cardApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/serializers/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/serializers/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views/auth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +55,34 @@
       <recent name="$PROJECT_DIR$/main/views" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="0001_initial" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="cardApp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main/migrations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/migrations/0001_initial.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.0001_initial" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
@@ -87,10 +120,30 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="443" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1579778860153" />
+    <state x="342" y="55" key="CommitChangelistDialog2" timestamp="1582022617767">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="342" y="55" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1582022617767" />
     <state x="507" y="189" key="FileChooserDialogImpl" timestamp="1579757607411">
       <screen x="0" y="23" width="1440" height="814" />
     </state>
     <state x="507" y="189" key="FileChooserDialogImpl/0.23.1440.814@0.23.1440.814" timestamp="1579757607411" />
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1582012400481">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1582012400481" />
+    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1582012400479">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1582012400479" />
+    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1582012400478">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1582012400478" />
+    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1582012400480">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1582012400480" />
     <state x="221" y="49" key="SettingsEditor" timestamp="1580901197510">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -101,5 +154,13 @@
     </state>
     <state x="397" y="264" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1581501230047" />
     <state x="397" y="261" key="com.intellij.ide.util.TipDialog/0.23.1440.811@0.23.1440.811" timestamp="1579753070545" />
+    <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582022591140">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1582022591140" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1581998763840">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1581998763840" />
   </component>
 </project>
