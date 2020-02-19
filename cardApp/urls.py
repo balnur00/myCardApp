@@ -15,10 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import url
-from main.views import views
-from main.views import auth
-from rest_framework_simplejwt import views as jwt_views
+from main.views import auth, userViews, employeeViews, roleViews, skillViews
 from rest_framework_jwt.views import obtain_jwt_token
 
 
@@ -26,16 +23,20 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
 #boss
-    path('bossCreate/', views.BossCreate.as_view()),
+    path('userCreate/', userViews.UserCreate.as_view()),
 #employee
-    path('employeeList/', views.EmployeeList.as_view()),
-    path('empCreate/', views.EmployeeCreate.as_view()),
+    path('employeeList/', employeeViews.EmployeeList.as_view()),
+    path('empCreate/', employeeViews.EmployeeCreate.as_view()),
+    path('employee/<int:pk>/', employeeViews.EmployeeDetail.as_view()),
+    path('employee/<int:pk>/delete', employeeViews.EmployeeDetail.as_view()),
+    path('employee/<int:pk>/update', employeeViews.EmployeeDetail.as_view()),
 #skill
-    path('softSkillUpdate/<int:pk>/', views.SkillUpdate.as_view()),
-    path('softSkillCreate', views.SkillUpdate.as_view()),
+    path('softSkillUpdate/<int:pk>/', skillViews.SkillUpdate.as_view()),
+    path('softSkillCreate', skillViews.SkillUpdate.as_view()),
     # path('hardSkillCreateList/', views.HardSkillCreateList.as_view()),
-    path('employee/<int:pk>/', views.EmployeeDetail.as_view()),
-    path('roles/', views.RoleList.as_view()),
+
+
+    path('roles/', roleViews.RoleList.as_view()),
 
     # path('signup/', auth.signup),
     # path('login/', auth.login),

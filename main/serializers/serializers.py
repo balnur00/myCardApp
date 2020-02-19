@@ -52,13 +52,13 @@ class EmployeeSerializer(serializers.ModelSerializer):
     surname = serializers.CharField(required=True)
     skinname = serializers.CharField(required=True)
     # photo = serializers.IntegerField(default=0)
-    # boss_id = serializers.RelatedField(source='boss', read_only=True)
+    # boss_id = UserSerializer(read_only=True)
     # role_id = serializers.RelatedField(source='role', read_only=True)
     # boss = serializers.SlugRelatedField(slug_field='username', read_only=True)
     role = serializers.SlugRelatedField(slug_field='name', read_only=True)
-    softSkill = SkillSerializer(many=True)
+    skill = SkillSerializer(many=True, read_only=True)
 
     class Meta:
         model = Employee
-        fields = ('id', 'name', 'surname', 'skinname', 'boss', 'role', 'skill')
+        fields = ('id', 'name', 'surname', 'skinname', 'role', 'skill')
 

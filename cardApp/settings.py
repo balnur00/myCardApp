@@ -68,7 +68,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'cardApp.urls'
-# AUTH_USER_MODEL = 'main.User' OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+AUTH_USER_MODEL = 'main.User'
 
 TEMPLATES = [
     {
@@ -105,7 +105,7 @@ WSGI_APPLICATION = 'cardApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'app',
+        'NAME': 'newapp',
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost',
