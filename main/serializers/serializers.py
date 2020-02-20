@@ -4,8 +4,6 @@ from main.models import *
 
 class UserSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
-    password = serializers.CharField(write_only=True)
-    username = serializers.CharField(required=False)
     email = serializers.EmailField(required=True)
     first_name = models.CharField()
     last_name = models.CharField()
@@ -14,7 +12,14 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'password', 'email', 'first_name', 'last_name')
+        unique_together = ['first_name', 'last_name']
+        fields = ('id', 'username', 'password', 'email', 'first_name', 'last_name', 'is_staff')
+
+    def create(self, validated_data):
+        user = super().create(validated_data)
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
 
 
 class RoleSerializer(serializers.ModelSerializer):
@@ -26,17 +31,6 @@ class RoleSerializer(serializers.ModelSerializer):
         fields = ('id', 'name')
 
 
-class SkillSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(read_only=True)
-    name = serializers.CharField(required=True)
-    level = serializers.IntegerField(default=0)
-    # photo = serializers.ImageField(required=False)
-
-    class Meta:
-        model = Skill
-        fields = ('id', 'name', 'level')
-
-
 class TypeSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(required=True)
@@ -46,19 +40,44 @@ class TypeSerializer(serializers.ModelSerializer):
         fields = ('id', 'name')
 
 
+class SkillSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
+    name = serializers.CharField(required=True)
+    level = serializers.IntegerField(default=0)
+    type = serializers.SlugRelatedField(slug_field='name', read_only=True)
+    type_id = serializers.IntegerField()
+    # photo = serializers.ImageField(required=False)
+
+    class Meta:
+        model = Skill
+        fields = ('id', 'name', 'level', 'type', 'type_id')
+
+
 class EmployeeSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(required=True)
     surname = serializers.CharField(required=True)
     skinname = serializers.CharField(required=True)
-    # photo = serializers.IntegerField(default=0)
-    # boss_id = UserSerializer(read_only=True)
-    # role_id = serializers.RelatedField(source='role', read_only=True)
-    # boss = serializers.SlugRelatedField(slug_field='username', read_only=True)
     role = serializers.SlugRelatedField(slug_field='name', read_only=True)
-    skill = SkillSerializer(many=True, read_only=True)
+    skills = SkillSerializer(required=False, many=True, read_only=True)
+    created_by = UserSerializer(read_only=True)
 
     class Meta:
         model = Employee
-        fields = ('id', 'name', 'surname', 'skinname', 'role', 'skill')
+        unique_together = ['name', 'surname']
+        fields = ('id', 'name', 'surname', 'skinname', 'role', 'skills', 'created_by')
+
+
+    # def create(self, validated_data):
+    #     skill_data = validated_data.pop('skills')
+    #     employee = Employee.objects.create(**validated_data)
+    #     for data in skill_data:
+    #         Skill.objects.create(employee=employee, **data)
+    #     return employee
+
+
+class BlackListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BlackListedToken
+        fields = ('__all__')
 

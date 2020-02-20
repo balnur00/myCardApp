@@ -36,3 +36,24 @@
 # def logout(request):
 #     request.auth.delete()
 #     return Response(status=status.HTTP_200_OK)
+
+from rest_framework.permissions import BasePermission
+from main.models import BlackListedToken
+from rest_framework import generics
+
+class IsTokenValid(BasePermission):
+    def has_permission(self, request, view):
+        user_id = request.user.id
+        is_allowed_user = True
+        token = request.auth.decode("utf-8")
+        try:
+            is_blackListed = BlackListedToken.objects.get(user=user_id, token=token)
+            if is_blackListed:
+                is_allowed_user = False
+        except BlackListedToken.objects.DoesNotExist:
+            is_allowed_user = True
+        return is_allowed_user
+
+
+# class UserLogout(generics.RetrieveUpdateDestroyAPIView):
+

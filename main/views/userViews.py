@@ -9,4 +9,4 @@ from rest_framework.response import Response
 class UserCreate(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    # permission_classes = (AllowAny, )
+

@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from main.views import auth, userViews, employeeViews, roleViews, skillViews
+from main.views import auth, userViews, employeeViews, roleViews, skillViews, typeViews
 from rest_framework_jwt.views import obtain_jwt_token
+from rest_framework_jwt.views import refresh_jwt_token
 
 
 urlpatterns = [
@@ -31,19 +32,17 @@ urlpatterns = [
     path('employee/<int:pk>/delete', employeeViews.EmployeeDetail.as_view()),
     path('employee/<int:pk>/update', employeeViews.EmployeeDetail.as_view()),
 #skill
-    path('softSkillUpdate/<int:pk>/', skillViews.SkillUpdate.as_view()),
-    path('softSkillCreate', skillViews.SkillUpdate.as_view()),
-    # path('hardSkillCreateList/', views.HardSkillCreateList.as_view()),
-
-
+    path('skillUpdateLevelUp/<int:pk>/', skillViews.SkillUpdateLevelUp.as_view()),
+    path('skillUpdateLevelDown/<int:pk>/', skillViews.SkillUpdateLevelDown.as_view()),
+    path('skillCreate/', skillViews.SkillCreate.as_view()), #remove later
+    path('skillList/', skillViews.SkillList.as_view()),
+    path('level/<int:pk>/<int:pk2>/', skillViews.increase_level),
+#roles
     path('roles/', roleViews.RoleList.as_view()),
-
-    # path('signup/', auth.signup),
-    # path('login/', auth.login),
-    # path('logout/', auth.logout),
-
-    # path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    # path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
-
-    path('login/', obtain_jwt_token)
+#types
+    path('typeListCreate/', typeViews.TypeListCreate.as_view()),
+#auth
+    path('refresh/', refresh_jwt_token),
+    path('login/', obtain_jwt_token),
+    # path('logout/', )
 ]
