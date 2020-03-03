@@ -28,7 +28,7 @@ class Role(models.Model):
 
 class Skill(models.Model):
     name = models.CharField(max_length=200, unique=True)
-    level = models.IntegerField(default=0)
+    level = models.PositiveIntegerField(default=0)
     # employee = models.ManyToManyField(Employee)
     type = models.ForeignKey(Type, on_delete=models.CASCADE,null=True)
     objects = models.Manager()
@@ -38,18 +38,22 @@ class Skill(models.Model):
 
 
 class Employee(models.Model):
-    # photo = models.ImageField(upload_to='media', default=None, null=True)
+    photo = models.ImageField(upload_to='media', default=None, null=True)
     name = models.CharField(max_length=200)
     surname = models.CharField(max_length=200)
     skinname = models.CharField(max_length=150)
     role = models.ForeignKey(Role, on_delete=models.CASCADE, null=True)
     skills = models.ManyToManyField(Skill)
+    points = models.PositiveIntegerField(default=0)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     objects = models.Manager()
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['-points']
 
 
 #Black list

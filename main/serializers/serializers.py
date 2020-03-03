@@ -59,13 +59,15 @@ class EmployeeSerializer(serializers.ModelSerializer):
     surname = serializers.CharField(required=True)
     skinname = serializers.CharField(required=True)
     role = serializers.SlugRelatedField(slug_field='name', read_only=True)
+    photo = serializers.ImageField(required=False)
     skills = SkillSerializer(required=False, many=True, read_only=True)
+    points = serializers.IntegerField()
     created_by = UserSerializer(read_only=True)
 
     class Meta:
         model = Employee
         unique_together = ['name', 'surname']
-        fields = ('id', 'name', 'surname', 'skinname', 'role', 'skills', 'created_by')
+        fields = ('id', 'name', 'surname', 'skinname', 'role', 'skills', 'created_by', 'photo', 'points')
 
 
     # def create(self, validated_data):

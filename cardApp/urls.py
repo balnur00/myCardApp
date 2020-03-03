@@ -18,7 +18,9 @@ from django.urls import path, include
 from main.views import auth, userViews, employeeViews, roleViews, skillViews, typeViews
 from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework_jwt.views import refresh_jwt_token
-
+from django.conf import settings
+from django.urls import path, re_path
+from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,14 +31,16 @@ urlpatterns = [
     path('employeeList/', employeeViews.EmployeeList.as_view()),
     path('empCreate/', employeeViews.EmployeeCreate.as_view()),
     path('employee/<int:pk>/', employeeViews.EmployeeDetail.as_view()),
+    path('employeeSkills/<int:pk>/', employeeViews.retrieve_employee),
     path('employee/<int:pk>/delete', employeeViews.EmployeeDetail.as_view()),
     path('employee/<int:pk>/update', employeeViews.EmployeeDetail.as_view()),
 #skill
-    path('skillUpdateLevelUp/<int:pk>/', skillViews.SkillUpdateLevelUp.as_view()),
-    path('skillUpdateLevelDown/<int:pk>/', skillViews.SkillUpdateLevelDown.as_view()),
+    # path('skillUpdateLevelUp/<int:pk>/', skillViews.SkillUpdateLevelUp.as_view()),
+    # path('skillUpdateLevelDown/<int:pk>/', skillViews.SkillUpdateLevelDown.as_view()),
     path('skillCreate/', skillViews.SkillCreate.as_view()), #remove later
     path('skillList/', skillViews.SkillList.as_view()),
-    path('level/<int:pk>/<int:pk2>/', skillViews.increase_level),
+    path('levelUp/<int:pk>/<int:pk2>/', skillViews.increase_level),
+    path('levelDown/<int:pk>/<int:pk2>/', skillViews.dec_level),
 #roles
     path('roles/', roleViews.RoleList.as_view()),
 #types
@@ -46,3 +50,10 @@ urlpatterns = [
     path('login/', obtain_jwt_token),
     # path('logout/', )
 ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        re_path(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+    ]

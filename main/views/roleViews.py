@@ -10,3 +10,4 @@ from rest_framework.response import Response
 class RoleList(generics.ListCreateAPIView):
     queryset = Role.objects.all()
     serializer_class = RoleSerializer
+    permission_classes = (AllowAny,)

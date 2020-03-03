@@ -2,20 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bd70b3f-f3ab-4511-9a1b-44c8a15aadd5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main/migrations/0002_auto_20200220_1158.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/views/typeViews.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cardApp/pagination.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0003_auto_20200221_1017.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0004_employee_photo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0005_employee_points.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/man-silhouette-profile-picture-vector-2139732.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/man-silhouette-profile-picture-vector-2139732_nFBYJan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/pro.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/pro_4ixyCux.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/pro_FV5MGV7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/pro_GIyFQA6.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cardApp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardApp/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cardApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/migrations/0002_blacklistedtoken.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/serializers/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/serializers/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/views/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views/auth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views/employeeViews.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views/employeeViews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views/roleViews.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views/roleViews.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views/skillViews.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views/skillViews.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/views/userViews.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views/userViews.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/views/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,18 +161,18 @@
     </state>
     <state x="221" y="49" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1580901197510" />
     <state x="221" y="67" key="SettingsEditor/0.23.1440.814@0.23.1440.814" timestamp="1579757630172" />
-    <state x="397" y="264" key="com.intellij.ide.util.TipDialog" timestamp="1582168026248">
+    <state x="397" y="264" key="com.intellij.ide.util.TipDialog" timestamp="1583118377623">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="397" y="264" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1582168026248" />
+    <state x="397" y="264" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1583118377623" />
     <state x="397" y="261" key="com.intellij.ide.util.TipDialog/0.23.1440.811@0.23.1440.811" timestamp="1579753070545" />
     <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582022591140">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1582022591140" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1582112653958">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1582280252892">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1582112653958" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1582280252892" />
   </component>
 </project>
