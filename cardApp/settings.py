@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'social_django',
     'rest_framework_jwt',
     'django_filters',
 
