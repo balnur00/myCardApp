@@ -221,6 +221,4 @@ JWT_AUTH = {
     'JWT_AUTH_COOKIE': None,
 }
 
-
-
 django_heroku.settings(locals())
