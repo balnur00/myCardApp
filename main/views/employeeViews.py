@@ -5,26 +5,29 @@ from rest_framework.filters import SearchFilter
 from rest_framework.permissions import AllowAny
 from rest_framework import generics, status
 
-from main.filters import EmployeeFilter
+from main.filters.employeeFilter import EmployeeFilter
 from main.serializers.serializers import *
 from rest_framework.response import Response
-from django_filters.rest_framework import DjangoFilterBackend
+from django_filters import rest_framework as filters
 
-
-# from rest_framework.filters import SearchFilter, OrderingFilter
-
-# EMPLOYEE VIEWS
 
 # List
 class EmployeeList(generics.ListAPIView):
-    filter_backends = [SearchFilter]
-    search_fields = ['name', 'surname']
+    filter_backends = (SearchFilter, filters.DjangoFilterBackend, )
+    search_fields = ('name', 'surname',)
+    filter_class = EmployeeFilter
+    queryset = Employee.objects.all()
+    # filter_class = MyFilterSet
 
-    # filter_class = EmployeeFilter
-
-    def get_queryset(self):
-        # print(type(self.request.auth))
-        return Employee.objects.filter(created_by=self.request.user)
+    # def get_queryset(self):
+    #     queryset = Employee.objects.filter(created_by=self.request.user)
+    #     skills_name = self.request.query_params.get('skills_name', None)
+    #     skills_type = self.request.query_params.get('skills_type', None)
+    #     if skills_name is not None:
+    #         queryset = queryset.filter(skills__name=skills_name)
+    #     elif skills_type is not None:
+    #         queryset = queryset.filter(skills__type=skills_type)
+    #     return queryset
 
     def get_serializer_class(self):
         return EmployeeSerializer
