@@ -1,6 +1,5 @@
 from main.models import Employee
 import django_filters as df
-from django_filters import rest_framework as filters
 
 
 class InListFilter(df.Filter):
@@ -29,10 +28,11 @@ class EmployeeFilter(df.FilterSet):
     #     lookup_expr='in',
     #     queryset=Employee.objects.all(),
     # )
+    skill_id = NumberInFilter(field_name='skills__id', lookup_expr='in')
     skill_type = NumberInFilter(field_name='skills__type', lookup_expr='in')
 
     class Meta:
         model = Employee
-        fields = ('name', 'role', 'skills', 'skills__name', 'skills__type__name', )
+        fields = ('name', 'role', 'skills', 'skills__id', 'skills__type', )
 
 

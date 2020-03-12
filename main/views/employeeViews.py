@@ -4,7 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework.filters import SearchFilter
 from rest_framework.permissions import AllowAny
 from rest_framework import generics, status
-
+from drf_yasg.utils import swagger_auto_schema
 from main.filters.employeeFilter import EmployeeFilter
 from main.serializers.serializers import *
 from rest_framework.response import Response
@@ -17,20 +17,11 @@ class EmployeeList(generics.ListAPIView):
     search_fields = ('name', 'surname',)
     filter_class = EmployeeFilter
     queryset = Employee.objects.all()
-    # filter_class = MyFilterSet
+    serializer_class = EmployeeSerializer
 
-    # def get_queryset(self):
-    #     queryset = Employee.objects.filter(created_by=self.request.user)
-    #     skills_name = self.request.query_params.get('skills_name', None)
-    #     skills_type = self.request.query_params.get('skills_type', None)
-    #     if skills_name is not None:
-    #         queryset = queryset.filter(skills__name=skills_name)
-    #     elif skills_type is not None:
-    #         queryset = queryset.filter(skills__type=skills_type)
-    #     return queryset
-
-    def get_serializer_class(self):
-        return EmployeeSerializer
+    # @swagger_auto_schema(responses={200: EmployeeSerializer(many=True)})
+    # def get(self, request):
+    #     return Response('OK')
 
 
 # Create
@@ -40,6 +31,10 @@ class EmployeeCreate(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
+
+    # @swagger_auto_schema(operation_description="description")
+    # def post(self, request):
+    #     return Response('Employee')
 
 
 # list one employee : delete or update

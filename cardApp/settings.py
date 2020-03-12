@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'rest_framework_jwt',
     'django_filters',
-
+    'drf_yasg',
 ]
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
@@ -73,7 +73,7 @@ AUTH_USER_MODEL = 'main.User'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

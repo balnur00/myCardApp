@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bd70b3f-f3ab-4511-9a1b-44c8a15aadd5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main/filters/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/filters/employeeFilter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/swagger-ui.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cardApp/pagination.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardApp/pagination.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/filters.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardApp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardApp/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/filters/employeeFilter.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/filters/employeeFilter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views/employeeViews.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views/employeeViews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -38,6 +40,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -45,6 +48,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/main/serializers" />
       <recent name="$PROJECT_DIR$/main/views" />
     </key>
@@ -147,10 +151,10 @@
     </state>
     <state x="175" y="49" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583230732217" />
     <state x="221" y="67" key="SettingsEditor/0.23.1440.814@0.23.1440.814" timestamp="1579757630172" />
-    <state x="397" y="264" key="com.intellij.ide.util.TipDialog" timestamp="1583377801144">
+    <state x="397" y="264" key="com.intellij.ide.util.TipDialog" timestamp="1583982321118">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="397" y="264" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1583377801144" />
+    <state x="397" y="264" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1583982321118" />
     <state x="397" y="261" key="com.intellij.ide.util.TipDialog/0.23.1440.811@0.23.1440.811" timestamp="1579753070545" />
     <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582022591140">
       <screen x="0" y="0" width="1440" height="900" />

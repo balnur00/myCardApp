@@ -1,3 +1,4 @@
+drf-yasg
 django-filter
 django-heroku
 djangorestframework_jwt
