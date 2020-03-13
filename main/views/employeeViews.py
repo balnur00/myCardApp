@@ -5,10 +5,14 @@ from rest_framework.filters import SearchFilter
 from rest_framework.permissions import AllowAny
 from rest_framework import generics, status
 from drf_yasg.utils import swagger_auto_schema
+from rest_framework.views import APIView
+
 from main.filters.employeeFilter import EmployeeFilter
 from main.serializers.serializers import *
-from rest_framework.response import Response
 from django_filters import rest_framework as filters
+from rest_framework.response import Response
+from rest_framework.parsers import MultiPartParser, JSONParser
+import cloudinary.uploader
 
 
 # List
@@ -32,12 +36,8 @@ class EmployeeCreate(generics.CreateAPIView):
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
 
-    # @swagger_auto_schema(operation_description="description")
-    # def post(self, request):
-    #     return Response('Employee')
 
-
-# list one employee : delete or update
+# get one employee : delete or update
 class EmployeeDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = EmployeeSerializer
 
@@ -62,7 +62,8 @@ def retrieve_employee(request, pk):
     except ObjectDoesNotExist:
         return Response({"status": "This employee does not have skills"}, status=status.HTTP_404_NOT_FOUND)
     for skill in employee_skills:
-        employee.points += 1  # TODO skill.level
+        employee.points += 1
+        # TODO points generations of skill level
         employee.save()
         serializer = EmployeeSerializer(employee)
     return Response(serializer.data)

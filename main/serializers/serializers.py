@@ -44,13 +44,14 @@ class SkillSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(required=True)
     level = serializers.IntegerField(default=0)
+    has_changed = serializers.BooleanField(default=False)
     type = serializers.SlugRelatedField(slug_field='name', read_only=True)
     type_id = serializers.IntegerField()
     # photo = serializers.ImageField(required=False)
 
     class Meta:
         model = Skill
-        fields = ('id', 'name', 'level', 'type', 'type_id')
+        fields = ('id', 'name', 'level', 'type', 'type_id', 'has_changed')
 
 
 class EmployeeSerializer(serializers.ModelSerializer):
@@ -59,7 +60,7 @@ class EmployeeSerializer(serializers.ModelSerializer):
     surname = serializers.CharField(required=True)
     skinname = serializers.CharField(required=True)
     role = serializers.SlugRelatedField(slug_field='name', read_only=True)
-    photo = serializers.ImageField(required=False)
+    # image = serializers.ImageField(required=False)
     skills = SkillSerializer(required=False, many=True, read_only=True)
     points = serializers.IntegerField()
     created_by = UserSerializer(read_only=True)
@@ -70,12 +71,14 @@ class EmployeeSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'surname', 'skinname', 'role', 'skills', 'created_by', 'photo', 'points')
 
 
-    # def create(self, validated_data):
-    #     skill_data = validated_data.pop('skills')
-    #     employee = Employee.objects.create(**validated_data)
-    #     for data in skill_data:
-    #         Skill.objects.create(employee=employee, **data)
-    #     return employee
+class ImageSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
+    url = serializers.CharField()
+    employee_id = serializers.IntegerField()
+
+    class Meta:
+        model = Image
+        fields = ('id', 'url', 'employee_id')
 
 
 class BlackListSerializer(serializers.ModelSerializer):

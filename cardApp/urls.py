@@ -25,6 +25,7 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+from main.views.imageUpload import ImageUploadView, ImageView
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -49,14 +50,14 @@ urlpatterns = [
     path('employeeList/', employeeViews.EmployeeList.as_view()),
     path('empCreate/', employeeViews.EmployeeCreate.as_view()),
     path('employee/<int:pk>/', employeeViews.EmployeeDetail.as_view()),
-    path('employeeSkills/<int:pk>/', employeeViews.retrieve_employee),
+    path('employee/skill/<int:pk>/', employeeViews.retrieve_employee),
     path('employee/<int:pk>/delete', employeeViews.EmployeeDetail.as_view()),
     path('employee/<int:pk>/update', employeeViews.EmployeeDetail.as_view()),
+    path('employee/levelUp/<int:pk>/<int:pk2>/', skillViews.increase_level),
+    path('employee/levelDown/<int:pk>/<int:pk2>/', skillViews.dec_level),
 #skill
     path('skillCreate/', skillViews.SkillCreate.as_view()), #remove later
     path('skillList/', skillViews.SkillList.as_view()),
-    path('levelUp/<int:pk>/<int:pk2>/', skillViews.increase_level),
-    path('levelDown/<int:pk>/<int:pk2>/', skillViews.dec_level),
 #roles
     path('roles/', roleViews.RoleList.as_view()),
 #types
@@ -65,16 +66,20 @@ urlpatterns = [
     path('refresh/', refresh_jwt_token),
     path('login/', obtain_jwt_token),
     # path('logout/', )
+#autodocx
     path('doc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-
     url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+#image
+    path('employee/<int:pk>/image/', ImageUploadView.as_view()),
+#images
+    path('image/', ImageView.as_view()),
 ]
 
-if settings.DEBUG:
-    urlpatterns += [
-        re_path(r'^media/(?P<path>.*)$', serve, {
-            'document_root': settings.MEDIA_ROOT,
-        }),
-    ]
+# if settings.DEBUG:
+#     urlpatterns += [
+#         re_path(r'^media/(?P<path>.*)$', serve, {
+#             'document_root': settings.MEDIA_ROOT,
+#         }),
+#     ]

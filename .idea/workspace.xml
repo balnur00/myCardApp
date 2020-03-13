@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bd70b3f-f3ab-4511-9a1b-44c8a15aadd5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/swagger-ui.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0006_auto_20200312_1027.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/views/imageUpload.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/views/upload_app_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cardApp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardApp/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cardApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/filters/employeeFilter.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/filters/employeeFilter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/serializers/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/serializers/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views/employeeViews.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views/employeeViews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views/skillViews.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views/skillViews.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -118,10 +123,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="443" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1583229965152" />
-    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583382219261">
+    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584072788230">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1583382219261" />
+    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1584072788230" />
     <state x="342" y="55" key="CommitChangelistDialog2" timestamp="1582022617767">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

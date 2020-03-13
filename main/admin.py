@@ -6,6 +6,7 @@ admin.site.register(Employee)
 admin.site.register(Skill)
 admin.site.register(Type)
 admin.site.register(Role)
+admin.site.register(Image)
 
 # from django.contrib import admin
 # from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin

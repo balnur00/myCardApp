@@ -13,11 +13,12 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 import datetime
+import cloudinary
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'main',
     'rest_framework',
@@ -53,6 +55,7 @@ INSTALLED_APPS = [
     'rest_framework_jwt',
     'django_filters',
     'drf_yasg',
+    'cloudinary',
 ]
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
@@ -183,6 +186,12 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+cloudinary.config(cloud_name='hyu2essrt',
+                  api_key='831463569624355',
+                  api_secret='qy0nDQbwJbIECzN6LFmX6lTjlbs')
+
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 JWT_AUTH = {
     'JWT_ENCODE_HANDLER':
