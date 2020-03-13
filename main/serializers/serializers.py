@@ -44,7 +44,7 @@ class SkillSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(required=True)
     level = serializers.IntegerField(default=0)
-    has_changed = serializers.BooleanField(default=False)
+    has_changed = serializers.DateField(default=None)
     type = serializers.SlugRelatedField(slug_field='name', read_only=True)
     type_id = serializers.IntegerField()
     # photo = serializers.ImageField(required=False)

@@ -30,7 +30,7 @@ class Role(models.Model):
 class Skill(models.Model):
     name = models.CharField(max_length=200, unique=True)
     level = models.PositiveIntegerField(default=0)
-    has_changed = models.BooleanField(default=False)
+    has_changed = models.DateField(default=None)
     # employee = models.ManyToManyField(Employee)
     type = models.ForeignKey(Type, on_delete=models.CASCADE,null=True)
     objects = models.Manager()
